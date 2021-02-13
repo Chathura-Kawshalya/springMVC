@@ -9,9 +9,12 @@
 <body>
 
 <form actoin="#" method="post">
+
+	Login Form <br>
 	Name : <input type="text" name="uid" > <br>
 	Password :  <input type="password" name="pass" > <br>
 	<input type="submit" name="submit" value="Login" > <br>
+	
 	
 	
 </form>>
