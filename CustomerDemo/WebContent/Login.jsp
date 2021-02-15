@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form actoin="#" method="post">
+<form action="Login" method="post">
 
 	This is the Login Form <br>
 	Name : <input type="text" name="uid" > <br>
@@ -17,7 +17,7 @@
 	
 	
 	
-</form>>
+</form>
 
 </body>
 </html>

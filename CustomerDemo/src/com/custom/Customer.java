@@ -3,34 +3,34 @@ package com.custom;
 public class Customer {
 
 	private int id;
-	private String nameString;
+	private String name;
 	private String email;
 	private String phone;
-	private String usernamem;
+	private String userName;
 	private String password;
 	
 	
-	public Customer(int id, String nameString, String email, String phone, String usernamem, String password) {
+	//Constructor 
+	public Customer(int id, String name, String email, String phone, String userName, String password) {
 		super();
 		this.id = id;
-		this.nameString = nameString;
+		this.name = name;
 		this.email = email;
 		this.phone = phone;
-		this.usernamem = usernamem;
+		this.userName = userName;
 		this.password = password;
 	}
 
 
+	//getter
 	public int getId() {
 		return id;
 	}
 
 
-
-	public String getNameString() {
-		return nameString;
+	public String getName() {
+		return name;
 	}
-
 
 
 	public String getEmail() {
@@ -38,14 +38,13 @@ public class Customer {
 	}
 
 
-
 	public String getPhone() {
 		return phone;
 	}
 
 
-	public String getUsernamem() {
-		return usernamem;
+	public String getUsername() {
+		return userName;
 	}
 
 
