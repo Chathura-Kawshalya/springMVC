@@ -17,7 +17,7 @@
 	<%-- call to getId method in customer.java --%>
 ${cus.id}
 ${cus.name}
-{cus.phone}
+${cus.phone}
 
 	</c:forEach>
 </body>

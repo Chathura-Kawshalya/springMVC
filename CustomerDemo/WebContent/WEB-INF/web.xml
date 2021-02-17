@@ -7,17 +7,31 @@
 
 
 
-<servlet>
+	<servlet>
  <!-- web xml is using to connect external jsp and internal Loginservlet -->
 		<servlet-name>login</servlet-name>
 		<!-- java resouces path -->
 		<servlet-class>com.custom.LoginServlet</servlet-class>
 	</servlet>
-	
 	<servlet-mapping>
 		<!-- Create path -->
 		<servlet-name>login</servlet-name>
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
+
+
+
+	<servlet>
+ <!-- web xml is using to connect external jsp and internal Loginservlet -->
+		<servlet-name>customerinsert</servlet-name>
+		<!-- java resouces path -->
+		<servlet-class>com.custom.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- Create path -->
+		<servlet-name>customerinsert</servlet-name>
+		<url-pattern>/insert</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>

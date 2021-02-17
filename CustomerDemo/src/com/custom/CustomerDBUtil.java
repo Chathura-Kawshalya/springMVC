@@ -18,7 +18,7 @@ public class CustomerDBUtil {
 		//Parameters for database
 		String url = "jdbc:mysql://localhost:3306/hotel";
 		String user = "root";
-		String pass ="root";
+		String pass = "root";
 		
 		
 		try {
@@ -56,5 +56,40 @@ public class CustomerDBUtil {
 		// return ThemeReader array
 		return cus;
 	}
+	
+	public static boolean insertCustomer(String name,String email, String phone, String username, String password) {
+		boolean isSuccess = false;
+
+		//Parameters for database
+		String url = "jdbc:mysql://localhost:3306/hotel";
+		String user = "root";
+		String pass = "root";
+		
+		try {
+			//database Connection
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection(url,user,pass);
+			Statement stmt = con.createStatement();
+			String sql = "insert into customer values (0,'"+name+"','"+email+"','"+phone+"', '"+username+"','"+password+"')";
+			int rs = stmt.executeUpdate(sql);
+			
+			if (rs == 1){
+					isSuccess = true;
+			}else {
+					isSuccess = false;
+			}
+			
+		}catch(Exception e) {
+			System.out.println("Database connection is not success!!!");
+			e.printStackTrace();
+		
+		}
+		
+		return isSuccess;
+		
+	}
 
 }
+
+	

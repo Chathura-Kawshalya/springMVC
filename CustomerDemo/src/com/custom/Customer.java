@@ -6,18 +6,18 @@ public class Customer {
 	private String name;
 	private String email;
 	private String phone;
-	private String userName;
+	private String username;
 	private String password;
 	
 	
 	//Constructor 
-	public Customer(int id, String name, String email, String phone, String userName, String password) {
+	public Customer(int id, String name, String email, String phone, String username, String password) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 	}
 
@@ -44,7 +44,7 @@ public class Customer {
 
 
 	public String getUsername() {
-		return userName;
+		return username;
 	}
 
 
