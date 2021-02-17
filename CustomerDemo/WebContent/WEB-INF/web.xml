@@ -25,7 +25,7 @@
  <!-- web xml is using to connect external jsp and internal Loginservlet -->
 		<servlet-name>customerinsert</servlet-name>
 		<!-- java resouces path -->
-		<servlet-class>com.custom.LoginServlet</servlet-class>
+		<servlet-class>com.custom.customerinsert</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<!-- Create path -->

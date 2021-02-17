@@ -11,24 +11,31 @@ import java.util.List;
 public class CustomerDBUtil {
 	
 	// 
+	private static boolean isSuccess;
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	
+	
 	public static List<Customer> validate(String userName, String Password){
 		
 		ArrayList<Customer> cus= new ArrayList<>();
 		
 		//Parameters for database
-		String url = "jdbc:mysql://localhost:3306/hotel";
-		String user = "root";
-		String pass = "root";
+		//String url = "jdbc:mysql://localhost:3306/hotel";
+		//String user = "root";
+		//String pass = "root";
 		
 		
 		try {
 			//database Connection
-			Class.forName("com.mysql.jdbc.Driver");
+			//Class.forName("com.mysql.jdbc.Driver");
 			
-			Connection con = DriverManager.getConnection(url,user,pass);
+			//Connection con = DriverManager.getConnection(url,user,pass);
+			con =  DBConnect.getConnection();
 			Statement stmt = con.createStatement();
 			String sql = "select * from customer where username='"+userName+"' and password='"+Password+"'";
-			ResultSet rs= stmt.executeQuery(sql);
+			rs= stmt.executeQuery(sql);
 			
 			//next is a boolean method
 		if (rs.next()){
@@ -58,30 +65,37 @@ public class CustomerDBUtil {
 	}
 	
 	public static boolean insertCustomer(String name,String email, String phone, String username, String password) {
+		
 		boolean isSuccess = false;
 
 		//Parameters for database
-		String url = "jdbc:mysql://localhost:3306/hotel";
-		String user = "root";
-		String pass = "root";
+		//String url = "jdbc:mysql://localhost:3306/hotel";
+		//String user = "root";
+		//String pass = "root";
 		
 		try {
 			//database Connection
-			Class.forName("com.mysql.jdbc.Driver");
+			//Class.forName("com.mysql.jdbc.Driver");
 			
-			Connection con = DriverManager.getConnection(url,user,pass);
-			Statement stmt = con.createStatement();
-			String sql = "insert into customer values (0,'"+name+"','"+email+"','"+phone+"', '"+username+"','"+password+"')";
+			//Connection con = DriverManager.getConnection(url,user,pass);
+			
+			con =  DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "insert into customer values (0,'"+name+"','"+email+"','"+phone+"','"+username+"','"+password+"')";
 			int rs = stmt.executeUpdate(sql);
-			
-			if (rs == 1){
+		
+			if (rs > 0){
 					isSuccess = true;
+					
 			}else {
 					isSuccess = false;
+					
 			}
 			
 		}catch(Exception e) {
-			System.out.println("Database connection is not success!!!");
+			System.out.println("Database connection is unsuccess!!!");
+			
 			e.printStackTrace();
 		
 		}
@@ -90,6 +104,37 @@ public class CustomerDBUtil {
 		
 	}
 
+	public static boolean updateCustomer(String id, String name,String email, String phone, String username, String password ) {
+		
+		boolean isSuccess = false;
+		try {
+			
+			con =  DBConnect.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "update customer set name='"+name+"',email='"+email+"',phone='"+phone+"',username='"+username+"',password='"+password+"'"
+					+ "where id='"+id+"'";
+			int rs = stmt.executeUpdate(sql);
+			
+			if (rs > 0){
+					isSuccess = true;
+					
+			}else {
+					isSuccess = false;
+					
+			}
+		
+		}catch(Exception e) {
+			System.out.println("Database connection is unsuccess!!!");
+		
+			e.printStackTrace();
+	
+		}
+	
+		return isSuccess;
+		
+	}
+	
 }
 
 	
