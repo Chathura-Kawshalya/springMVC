@@ -180,6 +180,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 					
 				</tr>
 				<tr>
+					<td>Customer User name</td>
+				
+				</tr>
+				<tr>
 					<td>Email</td>
 					<td>${cus.email}</td>
 					<div class="container">
