@@ -34,4 +34,16 @@
 	</servlet-mapping>
 
 
+<servlet>
+ <!-- web xml is using to connect external jsp and internal Loginservlet -->
+		<servlet-name>customerupdate</servlet-name>
+		<!-- java resouces path -->
+		<servlet-class>com.custom.updateCustomerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- Create path -->
+		<servlet-name>customerupdate</servlet-name>
+		<url-pattern>/update</url-pattern>
+	</servlet-mapping>
+
 </web-app>

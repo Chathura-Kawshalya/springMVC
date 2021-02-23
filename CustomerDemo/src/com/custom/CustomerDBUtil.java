@@ -7,11 +7,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
+
+
 
 public class CustomerDBUtil {
 	
 	// 
-	private static boolean isSuccess;
+	
+	private final static Logger logger = Logger.getLogger(CustomerDBUtil.class.getName());
+	//private static boolean isSuccess;
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
@@ -26,7 +32,7 @@ public class CustomerDBUtil {
 		//String user = "root";
 		//String pass = "root";
 		
-		
+		logger.info("database connection starting =================> start");
 		try {
 			//database Connection
 			//Class.forName("com.mysql.jdbc.Driver");
@@ -113,7 +119,7 @@ public class CustomerDBUtil {
 			stmt = con.createStatement();
 			
 			String sql = "update customer set name='"+name+"',email='"+email+"',phone='"+phone+"',username='"+username+"',password='"+password+"'"
-					+ "where id='"+id+"'";
+					+ "where id='"+id+"' ";
 			int rs = stmt.executeUpdate(sql);
 			
 			if (rs > 0){

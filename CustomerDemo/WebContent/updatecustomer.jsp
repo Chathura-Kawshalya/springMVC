@@ -17,8 +17,8 @@
 	String password= request.getParameter("pass");
 	%>
 
-	<form action="#" method="post">
-		Customer ID: <input type="text" name="cusid" value="<%= id %>" disabled><br>	<%--use java variable  --%>
+	<form action="update" method="post">
+		Customer ID: <input type="text" name="cusid" value="<%= id %>" readonly><br>	<%--use java variable  --%>
 		Customer Name: <input type="text" name="name" value="<%= name %>"><br>
 		Email: <input type="text" name="email" value="<%= email %>"><br> 
 		Phone: <input type="text" name="phone" value="<%= phone %>"><br>

@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="insert" method="post">
+<form>
+<div align="center">
 
 	Name: <input type="text" name="name"> <br>
 	Email: <input type="text" name="email"> <br>
@@ -17,6 +17,7 @@
 	Password: <input type="password" name="psw"> <br><br> 
 
 	<input type="submit" name="submit" value="create customer">
+	</div>
 </form>
 
 </body>

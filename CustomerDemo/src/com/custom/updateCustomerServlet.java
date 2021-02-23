@@ -2,7 +2,7 @@ package com.custom;
 
 import java.io.IOException;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +23,7 @@ public class updateCustomerServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String username = request.getParameter("uname");
-		String password = request.getParameter("pass");
+		String password = request.getParameter("pass");;
 		
 		boolean isTrue;
 		
@@ -31,15 +31,15 @@ public class updateCustomerServlet extends HttpServlet {
 	
 		
 		if(isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("messages/success.jsp");
 			dis.forward(request, response);
 		}else {
-			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("messages/unsuccess.jsp");
 			dis.forward(request, response);
 			
 		}
 		
-		}
+		
 		
 	}
 

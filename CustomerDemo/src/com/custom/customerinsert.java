@@ -27,10 +27,10 @@ public class customerinsert extends HttpServlet {
 		isTrue = CustomerDBUtil.insertCustomer(cusname, cusemail, cusphone, cususername, cuspass);
 		
 		if (isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("messages/success.jsp");
 			dis.forward(request, response);
 		}else {
-			RequestDispatcher dis = request.getRequestDispatcher("unsuccess.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("messages/unsuccess.jsp");
 			dis.forward(request, response);
 		}
 			 		
