@@ -188,7 +188,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 					</div>
 				</tr>
 				<tr>
-					<td>Mobile Phone</td>
+					<td>Phone</td>
 					<td>${cus.phone}</td>
 				</tr>
 			</table>
