@@ -177,8 +177,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 				<tr>
 					<td>Name</td>
 					<td>${cus.name}</td>
-					<td><a><img Src="images/Capture6.PNG" height="100"
-							width="100"> </a></td>
+					
 				</tr>
 				<tr>
 					<td>Email</td>
