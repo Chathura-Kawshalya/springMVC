@@ -9,13 +9,11 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-
-
+import com.sun.jdi.Location;
 
 public class CustomerDBUtil {
 	
 	// 
-	
 	private final static Logger logger = Logger.getLogger(CustomerDBUtil.class.getName());
 	//private static boolean isSuccess;
 	private static Connection con = null;
@@ -42,7 +40,7 @@ public class CustomerDBUtil {
 			Statement stmt = con.createStatement();
 			String sql = "select * from customer where username='"+userName+"' and password='"+Password+"'";
 			rs= stmt.executeQuery(sql);
-			
+			System.out.println(rs);
 			//next is a boolean method
 		if (rs.next()){
 			//get all the details from database
@@ -69,6 +67,43 @@ public class CustomerDBUtil {
 		// return ThemeReader array
 		return cus;
 	}
+		
+	
+ 	public static List<Location> location(int id){
+		
+		ArrayList<location> cus= new ArrayList<>();
+
+		try {
+
+			con =  DBConnect.getConnection();
+			Statement stmt = con.createStatement();
+			String sql = "select * from location where username='"+id+"'";
+			rs= stmt.executeQuery(sql);
+	//	System.out.println(rs);
+			//next is a boolean method
+		if (rs.next()){
+			//get all the details from database
+			String latitude = rs.getString(1);
+			String longitude = rs.getString(2);
+			
+			
+			//assign to customer.java class paramenters 
+			Customer c = new Customer(latitude,longitude);
+			//add to cus array 
+			cus.add(c);
+			
+		}
+			
+		}catch(Exception e) {
+			System.out.println("Database connection is not success!!!");
+			e.printStackTrace();
+		
+		}
+		
+		// return ThemeReader array
+		return cus;
+	}
+	
 	
 	public static boolean insertCustomer(String name,String email, String phone, String username, String password) {
 		
